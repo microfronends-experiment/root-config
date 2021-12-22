@@ -41,7 +41,15 @@
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
 
   <!-- Add your organization's prod import map URL to this script's src  -->
-  <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "@personal/root-config": "https://d2assg5f9p5gab.cloudfront.net/root-config/personal-root-config.js",
+        "@personal/react-app": "https://d2assg5f9p5gab.cloudfront.net/react-app/personal-react-app.js",
+        "angular-app": "https://d2assg5f9p5gab.cloudfront.net/angular-app/main.js"
+      }
+    }
+  </script>
 
   <% if (isLocal) { %>
   <script type="systemjs-importmap">
