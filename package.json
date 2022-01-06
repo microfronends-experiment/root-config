@@ -7,8 +7,9 @@
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "prepare": "husky install",
-    "build": "concurrently npm:build:*",
-    "build:webpack": "webpack --mode=production"
+    "build": "npm run build:production",
+    "build:development": "webpack --mode=production --env DOMAIN_URL=https://dg5dg20esgji.cloudfront.net",
+    "build:production": "webpack --mode=production --env DOMAIN_URL=https://d2assg5f9p5gab.cloudfront.net"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
