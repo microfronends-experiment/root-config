@@ -18,7 +18,13 @@ registerApplication({
 registerApplication({
   name: "angular-app",
   app: () => System.import("angular-app"),
-  activeWhen: ["/angularPage1", "/angularPage2"],
+  activeWhen: ["/employee"],
+});
+
+registerApplication({
+  name: "@personal/department-vue",
+  app: () => System.import("@personal/department-vue"),
+  activeWhen: ["/department"],
 });
 
 start({

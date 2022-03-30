@@ -15,7 +15,7 @@
     This CSP allows any SSL-enabled host and for arbitrary eval(), but you should limit these directives further to increase your app's security.
     Learn more about CSP policies at https://content-security-policy.com/#directive
   -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: http://localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: http://localhost:*; connect-src https: http://localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: http://localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: http://localhost:*; connect-src https: http://localhost:* ws://localhost:* ws://192.168.0.102:*; style-src 'unsafe-inline' https:; object-src 'none';">
   <meta name="importmap-type" content="systemjs-importmap" />
   <!-- If you wish to turn off import-map-overrides for specific environments (prod), uncomment the line below -->
   <!-- More info at https://github.com/joeldenning/import-map-overrides/blob/master/docs/configuration.md#domain-list -->
@@ -46,7 +46,8 @@
       "imports": {
         "@personal/root-config": "<%= DOMAIN_URL + '/root-config/personal-root-config.js' %>",
         "@personal/react-app": "<%= DOMAIN_URL + '/react-app/personal-react-app.js' %>",
-        "angular-app": "<%= DOMAIN_URL + '/angular-app/main.js' %>"
+        "angular-app": "<%= DOMAIN_URL + '/angular-app/main.js' %>",
+        "@personal/department-vue" : "<%= DOMAIN_URL + '/js/app.js' %>"
       }
     }
   </script>
@@ -57,7 +58,8 @@
       "imports": {
         "@personal/root-config": "//localhost:9000/personal-root-config.js",
         "@personal/react-app": "//localhost:8500/personal-react-app.js",
-        "angular-app": "//localhost:8501/main.js"
+        "angular-app": "//localhost:8501/main.js",
+        "@personal/department-vue" : "//localhost:8502/js/app.js"
       }
     }
   </script>
